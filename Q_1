@@ -1,0 +1,51 @@
+package basic;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+
+public class program {
+	
+	public static void getarray(int[] temp) {
+		Scanner scan = new Scanner(System.in);
+		for (int i = 0; i < temp.length; i++) {
+			temp[i] = scan.nextInt();
+		}
+	}
+	
+	public static void printarray(int[] temp) {
+		Scanner scan = new Scanner(System.in);
+		for (int i = 0; i < temp.length; i++) {
+			System.out.print(temp[i]+" ");
+		}
+		System.out.println();
+	}
+	
+	public static void search(int[] temp) {
+		int t;
+		Scanner scan = new Scanner(System.in);
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = i+1; j < temp.length; j++) {
+				if (temp[i]==0 && temp[j]!=0) {
+					t = temp[i];
+					temp[i]= temp[j];
+					temp[j]= t;
+					break;
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the array size");
+		int n = scan.nextInt();
+		int arr[] = new int[n];
+		getarray(arr);
+		printarray(arr);
+		search(arr);
+		printarray(arr);
+	}
+
+}
